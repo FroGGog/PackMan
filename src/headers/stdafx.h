@@ -3,7 +3,6 @@
 #include <iostream>
 #include <time.h>
 #include <vector>
-#include <array>
 
 //sfml
 #include <SFML/Graphics.hpp>

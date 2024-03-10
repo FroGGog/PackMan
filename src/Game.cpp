@@ -26,6 +26,8 @@ void Game::update()
 
 	this->updateCollisions();
 
+	this->updatePointColl();
+
 	this->player->update();
 
 }
@@ -66,6 +68,18 @@ void Game::updateCollisions()
 
 	this->player->setStop(false);
 
+
+}
+
+void Game::updatePointColl()
+{
+	for (int i{ 0 }; i < this->tileMap->getPoint().size(); i++) {
+
+		if (this->player->getCollBox().intersects(this->tileMap->getPoint()[i]->getGlobalBounds())) {
+			this->tileMap->getPoint().erase(this->tileMap->getPoint().begin() + i);
+		}
+
+	}
 
 }
 

@@ -11,6 +11,7 @@ public:
 	void update();
 	void updateEvents();
 	void updateCollisions();
+	void updatePointColl();
 
 	void render();
 

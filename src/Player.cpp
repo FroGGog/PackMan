@@ -60,7 +60,7 @@ void Player::updateCollBox()
 	//down
 	if (this->dir == DIR::DOWN) {
 		newPos.x = this->shape.getGlobalBounds().left + 7.f;
-		newPos.y = this->shape.getGlobalBounds().top + this->shape.getGlobalBounds().height;
+		newPos.y = this->shape.getGlobalBounds().top + this->shape.getGlobalBounds().height - 5.f;
 	}
 	//up
 	if (this->dir == DIR::TOP) {
@@ -69,7 +69,7 @@ void Player::updateCollBox()
 	}
 
 	if (this->dir == DIR::RIGHT) {
-		newPos.x = this->shape.getGlobalBounds().left + this->shape.getGlobalBounds().width;
+		newPos.x = this->shape.getGlobalBounds().left + this->shape.getGlobalBounds().width - 5.f;
 		newPos.y = this->shape.getGlobalBounds().top + 7.f;
 	}
 
@@ -152,7 +152,7 @@ void Player::initShape()
 	this->shape.setFillColor(sf::Color::Yellow);
 	this->shape.setPosition(sf::Vector2f(9 * 24.f, 15 * 28.f));
 
-	this->collisionBox.setSize(sf::Vector2f(5.f, 10.f));
+	this->collisionBox.setSize(sf::Vector2f(10.f, 15.f));
 	this->collisionBox.setPosition(this->shape.getGlobalBounds().left, this->shape.getGlobalBounds().top);
 	this->collisionBox.setFillColor(sf::Color::Black);
 	this->collisionBox.setPosition(this->shape.getPosition().x, this->shape.getPosition().y);
